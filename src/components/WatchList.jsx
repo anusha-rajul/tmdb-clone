@@ -56,8 +56,8 @@ export default function WatchList({ watchList , setWatchList, removeFromList}) {
     </div>
 
       
-      <div className='m-5 overflow-hidden rounded-lg border border-gray-300'>
-        <table className='w-full '>
+      <div className='m-5 overflow-auto rounded-lg border border-gray-300'>
+        <table className='min-w-full text-sm md:text-base'>
           <thead className='border-b-5 border-gray-300'>
             <tr>
               <th>Name</th>
@@ -84,7 +84,7 @@ export default function WatchList({ watchList , setWatchList, removeFromList}) {
               return movie.original_title.toLowerCase().includes(search.toLowerCase())
             }).map((movie) => {
               return <tr className='border-b-2 border-gray-300 text-center'>
-              <td className='flex items-center p-3'>
+              <td className='flex flex-col md:flex-row items-center p-3'>
                 <img className='h-25 w-30' src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} />
                 <div className='mx-10 '>{movie.original_title}</div>
               </td>
